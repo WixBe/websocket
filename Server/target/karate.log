@@ -1,0 +1,19 @@
+02:07:19.666 [main]  INFO  com.intuit.karate - Karate version: 1.5.1
+02:07:19.824 [main]  WARN  com.intuit.karate.Suite - failed to backup existing dir: target\karate-reports
+02:07:20.422 [main]  INFO  com.intuit.karate - >> lock acquired, begin callSingle: file:karate-tests/karate-socket.js
+02:07:20.439 [main]  WARN  com.intuit.karate - callSingle() will cache an exception
+02:07:20.439 [main]  INFO  com.intuit.karate - << lock released, cached callSingle: file:karate-tests/karate-socket.js
+02:07:20.440 [main]  WARN  com.intuit.karate - callSingle() cached result is an exception
+02:07:20.444 [main]  ERROR com.intuit.karate - karate-tests/karate.feature:4
+* def socket = karate.callSingle('file:karate-tests/karate-socket.js')
+js failed:
+>>>>
+01: karate.callSingle('file:karate-tests/karate-socket.js')
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "require" is not defined
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:213)
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:158)
+- <js>.:program(Unnamed:1)
+
+karate-tests/karate.feature:4
+02:07:20.776 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) karate-tests/karate.feature
