@@ -21,12 +21,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"05ea8dc7-f14c-4a70-8f95-01c6b67ce09f",karate_version:"1.5.1",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"83bc1289-971e-4a72-a182-832c7ed7ed9b",karate_version:"1.4.1",karate_meta:null});
   }
 });
 </script>
 
-    <title>karate-tests.karate</title>
+    <title>karate.SocketIoTest</title>
   </head>
   <body>
     <div id="root-container">
@@ -38,8 +38,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">0</div>
-      <div id="nav-fail" class="bg-danger">1</div>
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
     </div>
   </div>
   <div id="nav-env">
@@ -49,13 +49,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2025-02-10 02:07:20 am</div>
+    <div>2025-02-11 05:40:48 pm</div>
   </div>
 </div>
 
         <div class="nav-container">
-          <div class="nav-item failed">
-            <a href="#[1:3]"><span>[1:3]</span> <span>Send a message and verify storage</span></a>
+          <div class="nav-item passed">
+            <a href="#[1:3]"><span>[1:3]</span> <span>Send a message and verify response and storage</span></a>
           </div>
         </div>
       </div>
@@ -64,8 +64,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
           <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
           <span class="feature-label">Feature:</span>
-          <span class="feature-path">karate-tests/karate.feature</span><span class="feature-label">|</span>
-          <span class="feature-name">Test Socket.IO and REST API</span>
+          <span class="feature-path">karate/SocketIoTest.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Test Socket.IO and REST API using a Java helper</span>
           <span class="feature-description"></span>
         </div>
         <div class="scenario">
@@ -76,12 +76,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[1:3]</span>
-                <span class="scenario-name">Send a message and verify storage</span>
+                <span class="scenario-name">Send a message and verify response and storage</span>
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>80</span>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1700</span>
             </div>
           </div>
           
@@ -92,13 +92,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="0.4">
-      <div class="step-ref failed">4</div>
+      <div class="step-ref passed">4</div>
       
-      <div class="step-cell failed">
-        <span>*</span>&nbsp;<span>def socket = karate.callSingle(&#39;file:karate-tests/karate-socket.js&#39;)</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def message = &#39;Hello from Karate!&#39;</span>
       </div>
     </div>
-    <div class="time-cell failed">80</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -107,23 +107,35 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.4">02:07:20.422 &gt;&gt; lock acquired, begin callSingle: file:karate-tests/karate-socket.js
-02:07:20.439 callSingle() will cache an exception
-02:07:20.440 &lt;&lt; lock released, cached callSingle: file:karate-tests/karate-socket.js
-02:07:20.440 callSingle() cached result is an exception
-02:07:20.445 karate-tests/karate.feature:4
-* def socket = karate.callSingle(&#39;file:karate-tests/karate-socket.js&#39;)
-js failed:
-&gt;&gt;&gt;&gt;
-01: karate.callSingle(&#39;file:karate-tests/karate-socket.js&#39;)
-&lt;&lt;&lt;&lt;
-org.graalvm.polyglot.PolyglotException: ReferenceError: &quot;require&quot; is not defined
-- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:213)
-- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:158)
-- &lt;js&gt;.:program(Unnamed:1)
+     
 
-karate-tests/karate.feature:4
-</div>   
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref passed">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def SocketIoClient = Java.type(&#39;my.mypackage.SocketIoClient&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">25</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
 
   
 
@@ -136,13 +148,13 @@ karate-tests/karate.feature:4
 
   <div class="step-row">
     <div class="step-container" id="0.6">
-      <div class="step-ref skipped">6</div>
+      <div class="step-ref passed">6</div>
       
-      <div class="step-cell skipped">
-        <span>Given</span>&nbsp;<span>url &#39;http://localhost:8080/chat&#39;</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def client = new SocketIoClient(&#39;http://localhost:8080/chat&#39;)</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">49</div>
   </div>
 
    
@@ -164,13 +176,13 @@ karate-tests/karate.feature:4
 
   <div class="step-row">
     <div class="step-container" id="0.7">
-      <div class="step-ref skipped">7</div>
+      <div class="step-ref passed">7</div>
       
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>def message = &#39;Hello from Karate!&#39;</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def response = client.sendMessage(message)</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">383</div>
   </div>
 
    
@@ -192,13 +204,13 @@ karate-tests/karate.feature:4
 
   <div class="step-row">
     <div class="step-container" id="0.8">
-      <div class="step-ref skipped">8</div>
+      <div class="step-ref passed">8</div>
       
-      <div class="step-cell skipped">
-        <span>When</span>&nbsp;<span>def response = socket.sendMessage(message)</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print &#39;Response from Socket.IO server:&#39;, response</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">13</div>
   </div>
 
    
@@ -207,7 +219,8 @@ karate-tests/karate.feature:4
 
   
 
-     
+  <div class="preformatted" data-parent="0.8">17:40:47.244 [print] Response from Socket.IO server: Server received: Hello from Karate! 
+</div>   
 
   
 
@@ -220,13 +233,13 @@ karate-tests/karate.feature:4
 
   <div class="step-row">
     <div class="step-container" id="0.9">
-      <div class="step-ref skipped">9</div>
+      <div class="step-ref passed">9</div>
       
-      <div class="step-cell skipped">
-        <span>Then</span>&nbsp;<span>print &#39;Sent message:&#39;, response</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match response contains &#39;Server received&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">25</div>
   </div>
 
    
@@ -248,20 +261,20 @@ karate-tests/karate.feature:4
     <div class="step-container">
       <div class="step-ref passed"></div>
       
-      <div class="step-cell comment"># Wait 1 second for message storage</div>
+      <div class="step-cell comment"># Wait 1 second for the REST API to store the message</div>
     </div>
     <div class="time-cell comment"></div>            
   </div>
 
   <div class="step-row">
     <div class="step-container" id="0.12">
-      <div class="step-ref skipped">12</div>
+      <div class="step-ref passed">12</div>
       
-      <div class="step-cell skipped">
-        <span>*</span>&nbsp;<span>karate.delay(1000)</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>eval Java.type(&quot;java.lang.Thread&quot;).sleep(1000)</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1012</div>
   </div>
 
    
@@ -283,13 +296,13 @@ karate-tests/karate.feature:4
 
   <div class="step-row">
     <div class="step-container" id="0.14">
-      <div class="step-ref skipped">14</div>
+      <div class="step-ref passed">14</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>url &#39;http://localhost:5000/messages&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -311,13 +324,13 @@ karate-tests/karate.feature:4
 
   <div class="step-row">
     <div class="step-container" id="0.15">
-      <div class="step-ref skipped">15</div>
+      <div class="step-ref passed">15</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">168</div>
   </div>
 
    
@@ -326,7 +339,26 @@ karate-tests/karate.feature:4
 
   
 
-     
+  <div class="preformatted" data-parent="0.15">17:40:48.398 request:
+1 &gt; GET http://localhost:5000/messages
+1 &gt; Host: localhost:5000
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+17:40:48.431 response time in milliseconds: 30
+1 &lt; 200
+1 &lt; X-Powered-By: Express
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 148
+1 &lt; ETag: W/&quot;94-HSA1ru+6A3xG2LOCVa0Y+DaSrF0&quot;
+1 &lt; Date: Tue, 11 Feb 2025 12:10:48 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+[{&quot;_id&quot;:&quot;67ab3e47a7afd55622217453&quot;,&quot;message&quot;:&quot;Hello from Karate!&quot;,&quot;senderId&quot;:&quot;Y1GNoB89-3uaiGM_AAAH&quot;,&quot;timestamp&quot;:&quot;2025-02-11T12:10:47.224Z&quot;,&quot;__v&quot;:0}]
+
+</div>   
 
   
 
@@ -339,13 +371,13 @@ karate-tests/karate.feature:4
 
   <div class="step-row">
     <div class="step-container" id="0.16">
-      <div class="step-ref skipped">16</div>
+      <div class="step-ref passed">16</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -367,13 +399,13 @@ karate-tests/karate.feature:4
 
   <div class="step-row">
     <div class="step-container" id="0.17">
-      <div class="step-ref skipped">17</div>
+      <div class="step-ref passed">17</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response[0].message == message</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">17</div>
   </div>
 
    

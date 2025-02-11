@@ -1,15 +1,13 @@
 Feature: Test Socket.IO and REST API
 
-Scenario: Send a message and verify storage
-    * def socket = karate.callSingle('file:karate-tests/karate-socket.js')
-
-    Given url 'http://localhost:8080/chat'
-    And def message = 'Hello from Karate!'
-    When def response = socket.sendMessage(message)
-    Then print 'Sent message:', response
+  Scenario: Send a message and verify storage
+    * def message = 'Hello from Karate!'
+    * def requestData = { message: message }
+    * def response = karate.callSingle('file:karate-tests/karate-socket.js', requestData)
+    * match response == { status: 'Message sent' }
 
     # Wait 1 second for message storage
-    * karate.delay(1000)
+    * call karate.delay(1000)
 
     Given url 'http://localhost:5000/messages'
     When method GET

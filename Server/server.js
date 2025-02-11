@@ -1,5 +1,7 @@
-const { Server } = require("socket.io");
-const axios = require("axios");
+// const { Server } = require("socket.io");
+import { Server } from "socket.io";
+// const axios = require("axios");
+import axios from "axios";
 
 const io = new Server(8080, {
     cors: { origin: "*" },

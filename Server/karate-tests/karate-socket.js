@@ -1,11 +1,22 @@
-function sendMessage(message) {
-    var socket = require("socket.io-client")("http://localhost:8080/chat");
-    
-    socket.emit("message", message);
+function sendMessage(request) {
+    const io = require('socket.io-client');
+    const socket = io('http://localhost:8080/chat');
 
-    // Wait 500ms before disconnecting
-    java.lang.Thread.sleep(500);
-    socket.disconnect();
+    socket.emit('message', request.message);
 
-    return { status: "Message sent" };
+    // Promise to handle the asynchronous socket operation
+    return new Promise((resolve, reject) => {
+        socket.on('connect', () => {
+            console.log('Socket connected');
+        });
+
+        socket.on('disconnect', () => {
+            console.log('Socket disconnected');
+            resolve({ status: 'Message sent' });
+        });
+
+        socket.on('error', (err) => {
+            reject(err);
+        });
+    });
 }
